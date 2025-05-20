@@ -1,5 +1,6 @@
 class PowerUpsController < ApplicationController
   def index
+    @powerUps = PowerUp.all
   end
 
   def show
