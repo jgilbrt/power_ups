@@ -1,2 +1,18 @@
 <h1>PowerUps#show</h1>
 <p>Find me in app/views/power_ups/show.html.erb</p>
+
+<div class="container">
+  <div class="d-flex flex-wrap gap-3">
+      <div class="card" style="width: 200px;">
+        <div class="card-body">
+          <%= image_tag "#{@powerUp.image_url}", alt: "image", class: "card-img-top" %>
+          <p class="card-title"><%= @powerUp.product_name %></p>
+          <p class="card-text"> <%= @powerUp.description %></p>
+          <p class="card-text">£ <%= @powerUp.price %></p>
+          <p class="card-text"> <%= @powerUp.category %></p>
+          <p class="card-text"> <%= @powerUp.stock_quantity %></p>
+          <p class="card-text"> <%= @powerUp.user_id %></p>
+        </div>
+      </div>
+  </div>
+</div>
