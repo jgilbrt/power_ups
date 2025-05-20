@@ -1,2 +1,14 @@
 <h1>PowerUps#new</h1>
 <p>Find me in app/views/power_ups/new.html.erb</p>
+
+<div class="container">
+  <%= simple_form_for @powerUp do |f| %>
+    <%= f.input :product_name %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%= f.input :category %>
+    <%= f.input :stock_quantity %>
+    <%= f.input :image_url, as: :file, label: "Upload image"%>
+    <%= f.submit "Submit"%>
+  <% end %>
+</div>

@@ -19,7 +19,7 @@ PowerUp.create!(
   description: "Increases your movement speed by 30% for 10 minutes.",
   category: "Boost",
   price: 25,
-  image_url: "https://example.com/images/speed_boost.png",
+  image_url: "https://res.cloudinary.com/do2s320cj/image/upload/v1747753619/images_wtydoj.jpg",
   stock_quantity: 100,
   user_id: User.first.id
 )

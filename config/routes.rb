@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  resources :power_ups
+  resources :power_ups, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :orders
   resources :listings
 
