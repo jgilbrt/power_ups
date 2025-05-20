@@ -11,6 +11,25 @@
   </head>
 
   <body>
+
+  <%= render "layouts/navbar" %>
+
+    <div style="background: beige; text-align:center; font-size: 14px;">
+    <h1> TEST </h1>
+    <p> checking data is working </p>
+    <p><strong>Total Users:</strong> <%= User.count %></p>
+    <p><strong>Total PowerUps:</strong> <%= PowerUp.count %></p>
+    <p><strong>Total Orders:</strong> <%= Order.count %></p>
+
+    <p>
+  <% User.limit(5).each do |user| %>
+    <li><%= user.first_name %> <%= user.last_name %> - <%= user.email %></li>
+  <% end %>
+</p>
+
+  </div>
     <%= yield %>
+          <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
   </body>
 </html>
