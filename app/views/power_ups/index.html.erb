@@ -7,7 +7,7 @@
     <% @powerUps.each do |powerUp| %>
       <%= link_to power_up_path(powerUp) do%>
       <div class="card" style="width: 200px;">
-        <%= image_tag "https://res.cloudinary.com/do2s320cj/image/upload/v1747753619/images_wtydoj.jpg", alt: "image", class: "card-img-top" %>
+        <%= image_tag powerUp.image_url , alt: "image", class: "card-img-top" %>
         <div class="card-body">
           <p class="card-title"><%= powerUp.product_name %></p>
           <p class="card-text">£ <%= powerUp.price %></p>

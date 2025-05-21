@@ -14,6 +14,7 @@ PowerUp.destroy_all
 
 puts "Generating the power pills..."
 
+
 PowerUp.create!(
   product_name: "Speed Boost",
   description: "Increases your movement speed by 30% for 10 minutes.",
