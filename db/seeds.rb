@@ -41,7 +41,7 @@ PowerUp.create!(
   description: "Earn double experience points for 1 hour.",
   category: "Experience",
   price: 30,
-  image_url: "https://res.cloudinary.com/do2s320cj/image/upload/v1747838872/health_fcqcnw.png",
+  image_url: "https://res.cloudinary.com/do2s320cj/image/upload/v1747839485/moodenhancer_cugitw.png",
   stock_quantity: 75,
   user_id: User.first.id
 )
