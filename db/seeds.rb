@@ -30,7 +30,7 @@ PowerUp.create!(
   description: "Grants you a temporary shield that absorbs up to 50 damage.",
   category: "Defense",
   price: 40,
-  image_url: "https://example.com/images/shield_generator.png",
+  image_url: "https://res.cloudinary.com/do2s320cj/image/upload/v1747838872/health_fcqcnw.png",
   stock_quantity: 50,
   user_id: User.first.id
 )
@@ -40,7 +40,7 @@ PowerUp.create!(
   description: "Earn double experience points for 1 hour.",
   category: "Experience",
   price: 30,
-  image_url: "https://example.com/images/double_xp.png",
+  image_url: "https://res.cloudinary.com/do2s320cj/image/upload/v1747838872/health_fcqcnw.png",
   stock_quantity: 75,
   user_id: User.first.id
 )
