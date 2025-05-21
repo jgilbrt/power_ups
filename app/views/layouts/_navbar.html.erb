@@ -1,17 +1,16 @@
-<nav>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "Browse", power_ups_path %></li>
+<nav class="navbar">
+  <ul class="d-flex justify-content-end no-bullet-points w-100">
+    <li class="pt-2 ps-3"><%= link_to "Home", root_path, class: "text-style" %></li>
+    <li class="pt-2 ps-4"><%= link_to "Browse", power_ups_path, class: "text-style" %></li>
 
     <% if user_signed_in? %>
-      <li><%= link_to "Sell", new_power_up_path %></li>
-
-      <li>
-        Account
-        <ul>
-          <li><%= link_to "My Orders", orders_path %></li>
-          <li><%= link_to "My Listings", listings_path %></li>
-          <li><%= link_to "Log Out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
+      <li class="pt-2 ps-4"><%= link_to "Sell", new_power_up_path, class: "text-style" %></li>
+      <li class="pt-2 pe-2 text-align dropdown w-100" style="position: relative;">
+        <button class="dropdown-toggle ps-4 text-style" style="background:none;border:none;cursor:pointer;">Account</button>
+        <ul class="navbar-dropdown flex-column no-bullet-points" style="display: none; position: absolute; right: 0; background: #000; box-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);">
+          <li class="pt-2 text-align"><%= link_to "My Orders", orders_path, class: "text-style" %></li>
+          <li class="pt-2 text-align"><%= link_to "My Listings", listings_path, class: "text-style" %></li>
+          <li class="pt-2 text-align text-style"><%= link_to "Log Out", destroy_user_session_path, class: "dropdown-item", class: "text-style", data: { turbo_method: :delete } %></li>
         </ul>
       </li>
     <% else %>
@@ -19,3 +18,19 @@
     <% end %>
   </ul>
 </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.navbar-dropdown');
+    if (toggle && dropdown) {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      });
+      document.addEventListener('click', function() {
+        dropdown.style.display = 'none';
+      });
+    }
+  });
+</script>
