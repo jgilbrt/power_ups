@@ -1,24 +1,26 @@
-<h1>Listings#index</h1>
-
 <div class="container">
-  <div class="d-flex flex-wrap gap-3">
-    <% @powerUps.each do |pill| %>
-      <%= link_to power_up_path(pill) do %>
-        <div class="card" style="width: 300px;">
-          <%= image_tag pill.image_url, alt: "image", class: "card-img-top" %>
-          <div class="card-body">
-            <p class="card-title"><%= pill.product_name %></p>
-            <p class="card-text">£ <%= pill.price %></p>
+  <h1 class="text-primary">My listings</h1>
 
-            <% if pill.order.present? && pill.order.accepted? %>
-              <p class="card-text"><strong>Status: Sold</strong></p>
-              <p class="card-text">Sold to User: <%= pill.order.user_id %></p>
-            <% else %>
-              <p class="card-text"><strong>Status: Currently Listed</strong></p>
-            <% end %>
+  <div class="container mt-2">
+    <div class="d-flex flex-wrap gap-3">
+      <% @powerUps.each do |pill| %>
+        <%= link_to power_up_path(pill) do %>
+          <div class="card" style="width: 300px;">
+            <%= image_tag pill.image_url, alt: "image", class: "card-img-top" %>
+            <div class="card-body">
+              <p class="card-title"><%= pill.product_name %></p>
+              <p class="card-text">£ <%= pill.price %></p>
+
+              <% if pill.order.present? && pill.order.accepted? %>
+                <p class="card-text"><strong>Status: Sold</strong></p>
+                <p class="card-text">Sold to User: <%= pill.order.user_id %></p>
+              <% else %>
+                <p class="card-text"><strong>Currently listed at</strong></p>
+              <% end %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
