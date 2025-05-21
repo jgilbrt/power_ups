@@ -10,6 +10,7 @@
 
 puts "cleaning the DB.."
 
+Order.destroy_all
 PowerUp.destroy_all
 
 puts "Generating the power pills..."
