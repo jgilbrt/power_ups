@@ -11,7 +11,17 @@
           <p class="card-text">£ <%= @powerUp.price %></p>
           <p class="card-text"> <%= @powerUp.category %></p>
           <p class="card-text"> <%= @powerUp.stock_quantity %></p>
-          <p class="card-text"> <%= @powerUp.user_id %></p>
+          <p class="card-text"> <%= @powerUp.user.username %></p>
+        </div>
+<%# This section handles the Add to Cart form for the power-up %>
+        <div class="mt-3">
+          <%= form_with url: orders_path, method: :post do %>
+            <%= hidden_field_tag :power_up_id, @powerUp.id %>
+            <%= hidden_field_tag :quantity, 1, min: 1 %>
+            <%= hidden_field_tag :user_id, current_user.id %>
+            <%= hidden_field_tag :total_price, @powerUp.price %>
+            <%= submit_tag "Add to cart", class: "btn btn-secondary" %>
+          <% end %>
         </div>
       </div>
   </div>

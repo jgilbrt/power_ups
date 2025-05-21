@@ -8,11 +8,24 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
-    if @order.save
-      redirect_to @order, notice: 'Order was successfully created.'
+    power_up = PowerUp.find(params[:power_up_id])
+    quantity = params[:quantity].to_i
+    total_price = power_up.price * quantity
+
+    order = Order.new(
+      user: current_user,
+      power_up: power_up,
+      quantity: quantity,
+      total_price: total_price,
+      order_date: Time.current,
+      accepted: false
+    )
+
+    if order.save
+      redirect_to orders_path, notice: "Added to cart!"
     else
-      render :new
+      Rails.logger.error(order.errors.full_messages)
+      redirect_to power_up_path(power_up), alert: "Something went wrong."
     end
   end
 

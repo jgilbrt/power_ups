@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :power_ups, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :orders
-  resources :listings
+  resources :listings, only: [:index]
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
