@@ -1,26 +1,36 @@
 <div class="container">
   <h1 class="text-primary">My listings</h1>
 
-  <div class="container mt-2">
-    <div class="d-flex flex-wrap gap-3">
-      <% @powerUps.each do |pill| %>
-        <%= link_to power_up_path(pill) do %>
-          <div class="card" style="width: 300px;">
-            <%= image_tag pill.image_url, alt: "image", class: "card-img-top" %>
-            <div class="card-body">
-              <p class="card-title"><%= pill.product_name %></p>
-              <p class="card-text">£ <%= pill.price %></p>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+    <% @powerUps.each do |pill| %>
+      <div class="col">
+        <%= link_to power_up_path(pill), class: "text-decoration-none text-dark" do %>
+          <div class="card h-100 rounded-4 shadow">
+            <%= image_tag pill.image_url, alt: "image", class: "card-img-top rounded-top-4" %>
 
+            <div class="card-body">
+              <h5 class="card-title"><%= pill.product_name %></h5>
+              <p class="card-text">£ <%= pill.price %></p>
+            </div>
+
+            <div class="card-footer bg-white border-top-0 rounded-bottom-4">
               <% if pill.order.present? && pill.order.accepted? %>
-                <p class="card-text"><strong>Status: Sold</strong></p>
-                <p class="card-text">Sold to User: <%= pill.order.user_id %></p>
+                <small>
+                  <%= image_tag "https://cdn-icons-png.flaticon.com/512/2143/2143150.png", alt: "tick icon", style: "width:16px; height:16px;" %>
+                  <span class="text-success fw-bold">Sold</span> to
+                  <strong><%= pill.order.user.username %></strong>
+                  <%= time_ago_in_words(pill.order.updated_at || pill.order.order_date) %> ago
+                </small>
               <% else %>
-                <p class="card-text"><strong>Currently listed at</strong></p>
+                <small class="text-body-secondary">
+                  Listed by <strong><%= pill.user.username %></strong>
+                  <%= time_ago_in_words(pill.created_at) %> ago
+                </small>
               <% end %>
             </div>
           </div>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
