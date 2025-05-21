@@ -1,19 +1,19 @@
-<h1>PowerUps#index</h1>
-<p>Find me in app/views/power_ups/index.html.erb</p>
-
-
 <div class="container">
-  <div class="d-flex flex-wrap gap-3">
-    <% @powerUps.each do |powerUp| %>
-      <%= link_to power_up_path(powerUp) do%>
-      <div class="card" style="width: 200px;">
-        <%= image_tag powerUp.image_url , alt: "image", class: "card-img-top" %>
-        <div class="card-body">
-          <p class="card-title"><%= powerUp.product_name %></p>
-          <p class="card-text">£ <%= powerUp.price %></p>
+  <h1 class="text-success">My PowerUps</h1>
+
+  <div class="container">
+    <div class="d-flex flex-wrap gap-3">
+      <% @powerUps.each do |powerUp| %>
+        <%= link_to power_up_path(powerUp) do%>
+        <div class="card" style="width: 200px;">
+          <%= image_tag powerUp.image_url , alt: "image", class: "card-img-top" %>
+          <div class="card-body">
+            <p class="card-title"><%= powerUp.product_name %></p>
+            <p class="card-text">£ <%= powerUp.price %></p>
+          </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
       quantity: quantity,
       total_price: total_price,
       order_date: Time.current,
-      accepted: false
+      accepted: true
     )
 
     if order.save
