@@ -1,18 +1,24 @@
 <div class="mb-4"
   style="width: 100vw; height: 300px; background-image: url('<%= @powerUp.image_url %>');
-         background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center;">
+        background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center;">
 </div>
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-
       <div class="card shadow rounded-4 p-4 mb-4">
         <div class="card-body">
           <h2 class="card-title text-warning fw-bold"><%= @powerUp.product_name %></h2>
           <p class="card-text"><strong>Description:</strong> <%= @powerUp.description %></p>
           <p class="card-text"><strong>Price:</strong> £<%= @powerUp.price %></p>
           <p class="card-text"><strong>Category:</strong> <%= @powerUp.category %></p>
+          <p class="card-text"><strong>Review:</strong> <%= render "layouts/onlyreview", power_up: @powerUp , review: @review %></p>
+          <h3>Add a review</h3>
+            <%= simple_form_for [@powerUp, @review] do |f| %>
+              <%= f.input :rating %>
+              <%= f.input :comment %>
+              <%= f.submit "Submit Review", class: "btn btn-primary" %>
+            <% end %>
           <p class="card-text"><strong>Stock:</strong> <%= @powerUp.stock_quantity %></p>
           <p class="card-text text-muted"> <small> Listed by <strong> <%= @powerUp.user.username %> </strong> <%= time_ago_in_words(@powerUp.created_at) %> ago </small> </p>
         </div>

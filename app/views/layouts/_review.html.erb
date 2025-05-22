@@ -1,0 +1,21 @@
+<h3>Leave a Review</h3>
+<%= simple_form_for [power_up, review] do |f| %>
+  <%= f.input :rating, collection: 1..5, label: "Rating (0-5)", step: 1 %>
+  <%= f.input :comment, as: :text, label: "Your Comment" %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+<h3>Reviews</h3>
+<% if power_up.reviews.any? %>
+  <ul class="list-group mb-4">
+    <% power_up.reviews.each do |review| %>
+      <li class="list-group-item">
+        <p><%= review.comment %></p>
+        <p><%= "⭐" * review.rating %></p>
+        <p><%= "#{average_rating(power_up.reviews)}" %></p>
+        ------------------------------------
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews yet.</p>
+<% end %>

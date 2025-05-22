@@ -18,5 +18,7 @@
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <%= render "layouts/copyrightfooter", year: Time.current.year %>
   </body>
 </html>

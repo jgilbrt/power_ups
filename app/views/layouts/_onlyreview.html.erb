@@ -1,0 +1,12 @@
+<% if power_up.reviews.any? %>
+  <ul class="list-group mb-4">
+    <% power_up.reviews.each do |review| %>
+      <li class="list-group-item">
+        <p><%= "⭐" * review.rating.to_i %></p>
+        <p><%= review.comment %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No reviews yet.</p>
+<% end %>

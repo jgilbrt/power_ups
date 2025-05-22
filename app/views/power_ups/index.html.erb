@@ -45,6 +45,7 @@
             <div class="card-body">
               <h5 class="card-title"><strong><%= pill.product_name %></strong></h5>
               <p class="card-text">£ <%= pill.price %></p>
+              <p class="card-text"><strong>Review:</strong> <%= render "layouts/onlyreview", power_up: pill %></p>
               <% if pill.category.present? %>
                 <span class="badge bg-secondary"><%= pill.category %></span>
               <% end %>
