@@ -3,6 +3,7 @@
   background: white;
 }
 
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -18,6 +19,11 @@
 
 .form-control::placeholder {
   color: #7f7f7f;
+}
+
+.search-bar {
+  width: 250px;
+  font-size: 15px;
 }
 
 .navbar {
