@@ -1,17 +1,29 @@
 <div class="container">
-  <h1 class="text-danger">My orders</h1>
+  <h1 class="text-primary text-center">My Orders</h1>
 
-  <% @orders.each do |order| %>
-    <div class="card">
-      <h2>Order ID: <%= order.id %></h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+    <% @orders.each do |order| %>
+      <div class="col">
+        <%= link_to power_up_path(order.power_up), class: "text-decoration-none text-dark" do %>
+          <div class="card h-100 rounded-4 shadow">
 
-      <p><strong>Product:</strong> <%= order.power_up.product_name %></p>
-      <p><strong>Description:</strong> <%= order.power_up.description %></p>
-      <p><strong>Category:</strong> <%= order.power_up.category %></p>
-      <p><strong>Quantity:</strong> <%= order.quantity %></p>
-      <p><strong>Total Price:</strong> £<%= order.total_price %></p>
-      <p><strong>Created at:</strong> <%= order.created_at.strftime("%B %d, %Y") %></p>
-      <p><strong>Accepted:</strong> <%= order.accepted? ? "Yes" : "No" %></p>
-    </div>
-  <% end %>
+            <div class="ratio ratio-1x1 rounded-top-4 overflow-hidden">
+              <%= image_tag order.power_up.image_url, alt: "image", class: "w-100 h-100 object-fit-cover" %>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title"><strong><%= order.power_up.product_name %></strong></h5>
+              <p class="card-text">£ <%= order.power_up.price %></p>
+            </div>
+
+            <div class="card-footer bg-white border-top-0 rounded-bottom-4 d-flex align-items-center gap-2">
+              <%= image_tag "https://cdn-icons-png.flaticon.com/512/2143/2143150.png", alt: "tick icon", style: "width:16px; height:16px;" %>
+              <span class="text-success fw-bold">Purchased</span>
+              <small class="text-body-secondary"></small>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

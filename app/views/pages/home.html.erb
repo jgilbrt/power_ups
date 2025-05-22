@@ -1,5 +1,18 @@
 <div class="container">
-  <h1 class="text-secondary">PowerUps</h1>
+  <h1 class="text-secondary">Featured PowerUps</h1>
 
-  <%= render "/pages/index"%>
+<div class="container mb-5">
+  <div class="d-flex justify-content-center flex-wrap gap-4">
+    <% @random_powerups.each do |powerup| %>
+      <%= link_to power_up_path(powerup) do %>
+        <div class="card" style="width: 200px;">
+          <%= image_tag powerup.image_url, alt: powerup.product_name, class: "card-img-top", style: "height: 150px; object-fit: cover;" %>
+          <div class="card-body text-center">
+            <h5 class="card-title"><%= powerup.product_name %></h5>
+            <p class="card-text">£<%= powerup.price %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
