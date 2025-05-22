@@ -6,8 +6,8 @@
       <% end %>
     </li>
     <li class="ps-3 pt-1">
-      <%= form_with url: power_ups_path, method: :get, local: true, class: "d-flex align-items-center" do %>
-        <%= text_field_tag :query, params[:query], placeholder: "Search...", class: "form-control navbar-search me-2", style: "height: 30px; font-size: 14px; border-radius: 45px" %>
+      <%= form_with url: power_ups_path, method: :get, local: true, class: "search-bar d-flex align-items-center" do %>
+        <%= text_field_tag :query, params[:query], placeholder: "🔎 Search...", class: "form-control navbar-search me-2", style: "height: 35px; font-size: 14px; border-radius: 45px; margin-top: -2px" %>
       <% end %>
     </li>
     <li class="pt-2 ps-3"><%= link_to "Shop", power_ups_path, class: "text-style" %></li>
