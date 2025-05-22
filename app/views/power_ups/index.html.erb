@@ -1,73 +1,72 @@
-<div class="d-flex align-items-center justify-content-center mb-4"
-  style=" width: 100vw; height: 120px;   background-size: cover; background-position: center;
+<div class="d-flex align-items-center justify-content-center"
+  style="width: 100vw; height: 120px; background-size: cover; background-position: center;
     background-image:
       linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
       url('https://static1.srcdn.com/wordpress/wp-content/uploads/2023/01/superman-jon-kent-strength-punch.jpg');">
-    <h1 style="font-family: 'Arial Black', Gadget, sans-serif; color: white; font-weight: 900; font-size: 3rem;"> PowerUps Marketplace </h1> <br>
+  <h1 style="font-family: 'Arial Black', Gadget, sans-serif; color: white; font-weight: 900; font-size: 3rem;">PowerUps Marketplace</h1>
 </div>
 
-
-<div class="container">
-
-  <div class="my-4">
+<div style="width: 100vw; background: white; padding: 1.5rem 3rem; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+  <div class="container-fluid px-0">
     <%= form_with url: power_ups_path, method: :get, local: true, class: "row g-3 align-items-end" do %>
       <div class="col-md-4">
-        <label for="category" class="form-label">Category</label>
-        <%= select_tag :category, options_for_select(PowerUp.distinct.pluck(:category).compact.unshift("All")), class: "form-select", prompt: "Select category" %>
+        <label for="category" class="form-label fw-semibold">Category</label>
+        <%= select_tag :category, options_for_select(PowerUp.distinct.pluck(:category).compact.unshift("All"), params[:category]), class: "form-select" %>
       </div>
 
       <div class="col-md-3">
-        <label for="min_price" class="form-label">Min Price (£)</label>
-        <%= number_field_tag :min_price, params[:min_price], class: "form-control" %>
+        <label for="min_price" class="form-label fw-semibold">Min Price (£)</label>
+        <%= number_field_tag :min_price, params[:min_price], class: "form-control", min: 0, placeholder: "0" %>
       </div>
 
       <div class="col-md-3">
-        <label for="max_price" class="form-label">Max Price (£)</label>
-        <%= number_field_tag :max_price, params[:max_price], class: "form-control" %>
+        <label for="max_price" class="form-label fw-semibold">Max Price (£)</label>
+        <%= number_field_tag :max_price, params[:max_price], class: "form-control", min: 0, placeholder: "No limit" %>
       </div>
 
-      <div class="col-md-2">
-        <%= submit_tag "Filter", class: "btn btn-outline-dark w-100 rounded-lg" %>
+      <div class="col-md-2 d-grid">
+        <%= submit_tag "Filter", class: "btn btn-lg rounded-pill", style: "background-color: #ff6600; border-color: #ff6600; color: white;" %>
       </div>
     <% end %>
   </div>
+</div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
-    <% @powerUps.each do |pill| %>
-      <div class="col">
-        <%= link_to power_up_path(pill), class: "text-decoration-none text-dark" do %>
-          <div class="card h-100 rounded-4 shadow">
+<!-- Full width cards grid -->
+<div class="row row-cols-1 row-cols-md-4 g-4 mt-4 px-3" style="width: 100vw; margin-left: 0; margin-right: 0;">
+  <% @powerUps.each do |pill| %>
+    <div class="col">
+      <%= link_to power_up_path(pill), class: "text-decoration-none text-dark" do %>
+        <div class="card h-100 rounded-4 shadow">
 
-            <div class="ratio ratio-1x1 rounded-top-4 overflow-hidden">
-              <%= image_tag pill.image_url, alt: "image", class: "w-100 h-100 object-fit-cover" %>
-            </div>
-
-            <div class="card-body">
-              <h5 class="card-title"><strong><%= pill.product_name %></strong></h5>
-              <p class="card-text">£ <%= pill.price %></p>
-              <% if pill.category.present? %>
-                <span class="badge bg-secondary"><%= pill.category %></span>
-              <% end %>
-            </div>
-
-            <div class="card-footer bg-white border-top-0 rounded-bottom-4">
-              <% if pill.order.present? && pill.order.accepted? %>
-                <small>
-                  <%= image_tag "https://cdn-icons-png.flaticon.com/512/2143/2143150.png", alt: "tick icon", style: "width:16px; height:16px;" %>
-                  <span class="text-success fw-bold">Sold</span> to
-                  <strong><%= pill.order.user.username %></strong>
-                  <%= time_ago_in_words(pill.order.updated_at || pill.order.order_date) %> ago
-                </small>
-              <% else %>
-                <small class="text-body-secondary">
-                  Listed by <strong><%= pill.user.username %></strong>
-                  <%= time_ago_in_words(pill.created_at) %> ago
-                </small>
-              <% end %>
-            </div>
+          <div class="ratio ratio-1x1 rounded-top-4 overflow-hidden">
+            <%= image_tag pill.image_url, alt: "image", class: "w-100 h-100 object-fit-cover" %>
           </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+
+          <div class="card-body">
+            <h5 class="card-title"><strong><%= pill.product_name %></strong></h5>
+            <p class="card-text">£ <%= pill.price %></p>
+            <% if pill.category.present? %>
+              <span class="badge bg-secondary"><%= pill.category %></span>
+            <% end %>
+          </div>
+
+          <div class="card-footer bg-white border-top-0 rounded-bottom-4">
+            <% if pill.order.present? && pill.order.accepted? %>
+              <small>
+                <%= image_tag "https://cdn-icons-png.flaticon.com/512/2143/2143150.png", alt: "tick icon", style: "width:16px; height:16px;" %>
+                <span class="text-success fw-bold">Sold</span> to
+                <strong><%= pill.order.user.username %></strong>
+                <%= time_ago_in_words(pill.order.updated_at || pill.order.order_date) %> ago
+              </small>
+            <% else %>
+              <small class="text-body-secondary">
+                Listed by <strong><%= pill.user.username %></strong>
+                <%= time_ago_in_words(pill.created_at) %> ago
+              </small>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

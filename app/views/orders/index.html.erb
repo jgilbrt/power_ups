@@ -1,5 +1,26 @@
 <div class="container">
-  <h1 class="text-primary text-center">My Orders</h1>
+  <h1 class="text-primary text-center mb-4">My Orders</h1>
+
+  <!-- Filter Section -->
+  <div style="max-width: 400px; margin: 0 auto 2rem auto; background: white; padding: 1.5rem 2rem; border-radius: 1rem; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+    <%= form_with url: orders_path, method: :get, local: true do |f| %>
+      <div class="mb-3">
+        <%= f.label :category, "Filter by Category", class: "form-label fw-semibold" %>
+        <%= f.select :category, options_for_select(@categories.collect { |c| [c.name, c.id] }, params[:category]), { include_blank: "All categories" }, class: "form-select" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :min_price, "Minimum Price (£)", class: "form-label fw-semibold" %>
+        <%= f.number_field :min_price, value: params[:min_price], min: 0, class: "form-control", placeholder: "0" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :max_price, "Maximum Price (£)", class: "form-label fw-semibold" %>
+        <%= f.number_field :max_price, value: params[:max_price], min: 0, class: "form-control", placeholder: "No limit" %>
+      </div>
+      <div style="text-align: center;">
+        <%= f.submit "Filter", class: "btn btn-lg w-100 rounded-pill", style: "background-color: #ff6600; border-color: #ff6600; color: white;" %>
+      </div>
+    <% end %>
+  </div>
 
   <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
     <% @orders.each do |order| %>
