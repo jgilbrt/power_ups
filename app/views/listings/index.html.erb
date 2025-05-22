@@ -1,12 +1,12 @@
 <div class="container">
-  <h1 class="text-primary  text-center">My listings</h1>
+  <h1 class="text-primary text-center">My listings</h1>
 
   <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
     <% @powerUps.each do |pill| %>
       <div class="col">
-        <%= link_to power_up_path(pill), class: "text-decoration-none text-dark" do %>
-          <div class="card h-100 rounded-4 shadow">
+        <div class="card h-100 rounded-4 shadow">
 
+          <%= link_to power_up_path(pill), class: "text-decoration-none text-dark" do %>
             <div class="ratio ratio-1x1 rounded-top-4 overflow-hidden">
               <%= image_tag pill.image_url, alt: "image", class: "w-100 h-100 object-fit-cover" %>
             </div>
@@ -15,24 +15,28 @@
               <h5 class="card-title"><strong><%= pill.product_name %></strong></h5>
               <p class="card-text">£ <%= pill.price %></p>
             </div>
+          <% end %>
 
-            <div class="card-footer bg-white border-top-0 rounded-bottom-4">
-              <% if pill.order.present? && pill.order.accepted? %>
-                <small>
-                  <%= image_tag "https://cdn-icons-png.flaticon.com/512/2143/2143150.png", alt: "tick icon", style: "width:16px; height:16px;" %>
-                  <span class="text-success fw-bold">Sold</span> to
-                  <strong><%= pill.order.user.username %></strong>
-                  <%= time_ago_in_words(pill.order.updated_at || pill.order.order_date) %> ago
+              <div class="card-footer bg-white border-top-0 rounded-bottom-4 d-flex align-items-center gap-2" style="min-height: 80px; max-height: 90px;">            <% if pill.order.present? && pill.order.accepted? %>
+              <small class="d-flex align-items-center gap-2">
+                <%= image_tag "https://cdn-icons-png.flaticon.com/512/2143/2143150.png", alt: "tick icon", style: "width:16px; height:16px;" %>
+                <span class="text-success fw-bold">Sold</span> to
+                <strong><%= pill.order.user.username %></strong>
+                <%= time_ago_in_words(pill.order.updated_at || pill.order.order_date) %> ago
+              </small>
+            <% else %>
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <small class="text-body-secondary"> Listed <%= time_ago_in_words(pill.created_at) %> ago
                 </small>
-              <% else %>
-                <small class="text-body-secondary">
-                  Listed by <strong><%= pill.user.username %></strong>
-                  <%= time_ago_in_words(pill.created_at) %> ago
-                </small>
-              <% end %>
-            </div>
+
+                <% if pill.user == current_user %>
+                  <%= button_to 'Delete', power_up_path(pill), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-outline-danger ms-2 rounded", style: "transition: color 0.3s;", onmouseover: "this.style.color='white';", onmouseout: "this.style.color='';" %>
+                <% end %>
+              </div>
+            <% end %>
           </div>
-        <% end %>
+
+        </div>
       </div>
     <% end %>
   </div>
