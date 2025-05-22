@@ -5,17 +5,22 @@ class PowerUpsController < ApplicationController
     @powerUps = PowerUp.all
 
     @powerUps = PowerUp.left_outer_joins(:orders).where(orders: { accepted: [false, nil] }).distinct
-      if params[:category].present? && params[:category] != "All"
-        @powerUps = @powerUps.where(category: params[:category])
-      end
 
-      if params[:min_price].present?
-        @powerUps = @powerUps.where("price >= ?", params[:min_price])
-      end
+    if params[:category].present? && params[:category] != "All"
+      @powerUps = @powerUps.where(category: params[:category])
+    end
 
-      if params[:max_price].present?
-        @powerUps = @powerUps.where("price <= ?", params[:max_price])
-      end
+    if params[:min_price].present?
+      @powerUps = @powerUps.where("price >= ?", params[:min_price])
+    end
+
+    if params[:max_price].present?
+      @powerUps = @powerUps.where("price <= ?", params[:max_price])
+    end
+
+    if params[:query].present?
+      @powerUps = PowerUp.where("product_name ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
 
