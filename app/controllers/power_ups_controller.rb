@@ -54,3 +54,5 @@ class PowerUpsController < ApplicationController
   end
 
 end
+
+# controllers
