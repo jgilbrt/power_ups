@@ -1,15 +1,30 @@
-<div class="container">
-  <h1 class="text-warning">Create your listing</h1>
+<div class="d-flex align-items-center justify-content-center"
+     style="height: 120px; background-size: cover; background-position: center;
+            background-image:
+              linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://miro.medium.com/v2/resize:fit:1400/1*9s5sQTSXZ763T6Y07OzXeA.png');">
+  <h1 style="font-family: 'Arial Black', Gadget, sans-serif; color: white; font-weight: 900; font-size: 3rem;">
+    PowerUp your Profits
+  </h1>
+</div>
 
-  <div class="card-body">
+<div style="background-color: #f8f9fa; display: flex; justify-content: center; align-items: center; padding: 20px;">
+  <div style="max-width: 400px; width: 100%; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
     <%= simple_form_for @powerUp do |f| %>
-      <%= f.input :product_name %>
-      <%= f.input :price %>
-      <%= f.input :description %>
-      <%= f.input :category, collection: @categories, prompt: "Select category" %>
-      <%= f.input :stock_quantity %>
-      <%= f.input :image_url, label: "Upload image"%>
-      <%= f.submit "Submit", class: "btn btn-outline-warning"%>
+      <div style="margin-bottom: 1rem;">
+        <%= f.input :product_name, input_html: { class: "form-control" }, label_html: { class: "form-label fw-semibold" } %>
+        <%= f.input :price, input_html: { class: "form-control" }, label_html: { class: "form-label fw-semibold" } %>
+        <%= f.input :description, input_html: { class: "form-control" }, label_html: { class: "form-label fw-semibold" } %>
+        <%= f.input :category, collection: @categories, prompt: "Select category",
+                    input_html: { class: "form-select" }, label_html: { class: "form-label fw-semibold" } %>
+        <%= f.input :stock_quantity, input_html: { class: "form-control" }, label_html: { class: "form-label fw-semibold" } %>
+        <%= f.input :image_url, label: "Upload image", input_html: { class: "form-control" }, label_html: { class: "form-label fw-semibold" } %>
+      </div>
+
+      <div style="text-align: center;">
+        <%= f.submit "List to Marketplace", class: "btn btn-lg w-100 rounded-pill",
+                     style: "background-color: #ff6600; border-color: #ff6600; color: white;" %>
+      </div>
     <% end %>
   </div>
 </div>
