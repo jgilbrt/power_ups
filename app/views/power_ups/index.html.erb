@@ -11,7 +11,7 @@
     <%= form_with url: power_ups_path, method: :get, local: true, class: "row g-3 align-items-end" do %>
       <div class="col-md-4">
         <label for="category" class="form-label fw-semibold">Category</label>
-        <%= select_tag :category, options_for_select(PowerUp.distinct.pluck(:category).compact.unshift("All"), params[:category]), class: "form-select" %>
+        <%= select_tag :category, options_for_select(PowerUp.distinct.pluck(:category).compact.unshift("All"), params[:category]), class: "form-select border-radius-circle padding-10" %>
       </div>
 
       <div class="col-md-3">
@@ -25,7 +25,7 @@
       </div>
 
       <div class="col-md-2 d-grid">
-        <%= submit_tag "Filter", class: "btn btn-lg rounded-pill", style: "background-color: #ff6600; border-color: #ff6600; color: white;" %>
+        <%= submit_tag "Filter", class: "btn btn-lg rounded-pill", style: "background-color: #ff6600; border-color: #ff6600; color: white; font-size: 17px; font-weight: 700;" %>
       </div>
     <% end %>
   </div>
