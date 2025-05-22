@@ -1,6 +1,6 @@
 
 <div class="d-flex align-items-center justify-content-center"
-     style="height: 180px; background-size: cover; background-position: center;
+     style="height: 120px; background-size: cover; background-position: center;
             background-image:
               linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
               url('https://miro.medium.com/v2/resize:fit:1400/1*9s5sQTSXZ763T6Y07OzXeA.png');">
@@ -24,8 +24,15 @@
 
       <div style="text-align: center; padding-top: 1rem">
         <%= f.submit "List to Marketplace", class: "btn btn-lg w-100 rounded-pill",
-                     style: "background-color: #ff6600; border-color: #ff6600; color: white; font-size: 17px; font-weight: 700;" %>
+                     style: "background-color: #ff6600; border-color: #ff6600; color: white;" %>
       </div>
     <% end %>
   </div>
+</div>
+<div class="text-center mt-5">
+  <%= link_to root_path, class: "btn btn-outline-success" do %>
+    <span>
+      <i class="fa-solid fa-backward"></i> to home
+    </span>
+  <% end %>
 </div>
