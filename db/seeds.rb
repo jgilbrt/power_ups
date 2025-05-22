@@ -2,6 +2,17 @@ puts "cleaning the DB.."
 
 Order.destroy_all
 PowerUp.destroy_all
+User.destroy_all
+
+user = User.create!(
+  email: "demo@example.com",
+  password: "password123",
+  first_name: "Demo",
+  last_name: "User",
+  username: "demouser"
+)
+
+puts "User created: #{user.email}"
 
 puts "Generating the power pills..."
 
@@ -16,7 +27,7 @@ PowerUp.create!(
   price: 25,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747906970/illustration-blue-pill-circuitry-glitter-surrounded-glowing-particles-minimalistic-setting-capsule-featuring-365552983_exavic.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Agility Burst"
@@ -27,7 +38,7 @@ PowerUp.create!(
   price: 30,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747906982/360_F_1465371207_sfLR1tNHTZyScuoFMm4WLMzyFWHp4Ajj_duuqzl.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Dash Shot"
@@ -38,7 +49,7 @@ PowerUp.create!(
   price: 28,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747907017/red-medicine-pill-render-long-260nw-2449845389_oxqy0t.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Turbo Charge"
@@ -49,7 +60,7 @@ PowerUp.create!(
   price: 35,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912527/smart-pill-circuit-board-revolutionizing-future-healthcare-ai-powered-medicine-advanced-treatment-integration-artificial-smart-367156340_cdpjbu.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Kinetic Surge"
@@ -60,7 +71,7 @@ PowerUp.create!(
   price: 32,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747906518/360_F_1169775400_fKjcXdD7mrcz2oEQN5tI1h39fr6I9Q3O_s4wzfn.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Momentum Drive"
@@ -71,7 +82,7 @@ PowerUp.create!(
   price: 27,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912594/abstract-dna-pill-concept-health-care-technology-graphic-realistic-transparent-futuristic-inside-112452968_pnphv9.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Sprint Rush"
@@ -82,7 +93,7 @@ PowerUp.create!(
   price: 29,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912608/dna-capsule-11733864_xutlkw.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Quickstep Pill"
@@ -93,7 +104,7 @@ PowerUp.create!(
   price: 22,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912990/transparent-capsule-gray-background-gradient-39152418_eimdu8.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Overdrive Core"
@@ -104,7 +115,7 @@ PowerUp.create!(
   price: 40,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913019/glowing-ai-enhanced-pill-concept-set-vibrant-futuristic-digital-environment-futuristic-ai-enhanced-pill-concept-337666160_btn90u.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Rapid Fire"
@@ -115,7 +126,7 @@ PowerUp.create!(
   price: 31,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913039/glowing-ai-enhanced-pill-concept-set-vibrant-futuristic-digital-environment-futuristic-ai-enhanced-pill-concept-336364997_vudc1w.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Hyper Sprint"
@@ -126,7 +137,7 @@ PowerUp.create!(
   price: 45,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913060/image-features-blue-pill-text-success-representing-concept-achievement-accomplishment-surrounded-327976369_qlqofk.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Blink Capsule"
@@ -137,7 +148,7 @@ PowerUp.create!(
   price: 42,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913084/cuttingedge-digital-healthcare-innovation-concept-utilizing-futuristic-technology-artificial-intelligence-precision-320066276_axh5d8.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 # Mood (Emotional & Mental Stability)
@@ -151,7 +162,7 @@ PowerUp.create!(
   price: 20,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913108/pill-capsule-metallic-coating-image-created-using-ai-floating-d-pill-capsule-metallic-coating-pharmaceutical-aesthetic-380499013_icoep2.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Zen Drop"
@@ -162,7 +173,7 @@ PowerUp.create!(
   price: 25,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913113/floating-d-pill-capsule-metallic-coating-pharmaceutical-aesthetic-pill-capsule-metallic-coating-image-created-using-ai-380499047_gjtiez.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Chill Pill"
@@ -173,7 +184,7 @@ PowerUp.create!(
   price: 18,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913747/futuristic-capsule-against-various-viruses-diseases-background-bacteria-concept-medicine-care-seriously-ill-323657222_eprqsk.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Serenity Shot"
@@ -184,7 +195,7 @@ PowerUp.create!(
   price: 28,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913384/data-network-neon-banner-concept-ai-futuristic-healthcare-technology-monitoring-chip-capsules-generated-358913895_odup5r.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Vibe Lift"
@@ -195,7 +206,7 @@ PowerUp.create!(
   price: 22,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913420/573043d8-c0c6-4a1d-a95a-900f4a64452f.png",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Glow Capsule"
@@ -206,7 +217,7 @@ PowerUp.create!(
   price: 30,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913474/digital-pill-concept-circuit-board-connected-tablets-digital-pill-concept-circuit-board-connected-tablets-338477967_zvty5u.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Peace Bloom"
@@ -217,7 +228,7 @@ PowerUp.create!(
   price: 32,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913502/developing-future-pharmacology-artificial-intelligence-technology-abstract-futuristic-pills-generative-ai-319423792_g2jtqz.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Aura Boost"
@@ -228,7 +239,7 @@ PowerUp.create!(
   price: 27,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913506/digital-pill-medical-data-healthcare-research-pharmaceutical-technology-development-concept-digital-pill-medical-319398932_r9t0mn.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Relax Mint"
@@ -239,7 +250,7 @@ PowerUp.create!(
   price: 19,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913531/digital-pill-medical-data-healthcare-research-pharmaceutical-technology-development-concept-digital-pill-medical-319400388_fzr2er.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Tranquil Pop"
@@ -250,7 +261,7 @@ PowerUp.create!(
   price: 24,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913595/d-render-abstract-art-d-composition-surreal-flying-opened-cylinder-capsule-pill-small-balls-inside-black-metal-328884570_rjmujq.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Balance Pulse"
@@ -261,7 +272,7 @@ PowerUp.create!(
   price: 26,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913584/image-showcases-futuristic-representation-medicine-pills-depicted-as-intricate-digital-networks-generated-ai-369573135_tluvaj.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Soothe Blend"
@@ -272,7 +283,7 @@ PowerUp.create!(
   price: 21,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913655/d-rendering-medical-capsule-red-blue-lighting-effect-creating-abstract-futuristic-background-image-372180620_mfa631.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 # Brain (Cognitive Enhancements)
@@ -286,7 +297,7 @@ PowerUp.create!(
   price: 35,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913699/innovative-smart-pills-transforming-healthcare-futuristic-technology-smart-pills-integrated-circuits-promise-364439744_cqkpz1.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Clarity Capsule"
@@ -297,7 +308,7 @@ PowerUp.create!(
   price: 30,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913747/futuristic-capsule-against-various-viruses-diseases-background-bacteria-concept-medicine-care-seriously-ill-323657222_eprqsk.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Mind Boost"
@@ -308,7 +319,7 @@ PowerUp.create!(
   price: 40,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913729/illustration-blue-pill-circuitry-glitter-surrounded-glowing-particles-minimalistic-setting-capsule-featuring-365552983_ywikmi.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Sharp Shot"
@@ -319,7 +330,7 @@ PowerUp.create!(
   price: 32,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913715/innovative-smart-pills-transforming-healthcare-futuristic-technology-smart-pills-integrated-circuits-promise-364439787_jt7fas.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Think Pill"
@@ -330,7 +341,7 @@ PowerUp.create!(
   price: 38,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913843/transparent-capsule-blue-background-38459952_hlsznb.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Insight Drop"
@@ -341,7 +352,7 @@ PowerUp.create!(
   price: 45,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913595/d-render-abstract-art-d-composition-surreal-flying-opened-cylinder-capsule-pill-small-balls-inside-black-metal-328884570_rjmujq.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Memory Flash"
@@ -352,7 +363,7 @@ PowerUp.create!(
   price: 28,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913866/transparent-capsule-blue-background-38503703_bk5anh.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Logic Flow"
@@ -363,7 +374,7 @@ PowerUp.create!(
   price: 33,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913878/green-gears-pill-vector-symbolic-abstract-illustration-futuristic-smart-88831424_gvoyzp.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Brainwave Pop"
@@ -374,7 +385,7 @@ PowerUp.create!(
   price: 36,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913923/dna-helix-inside-pill-capsules-standing-d-illustration-render-84873861_lmgpfy.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Idea Surge"
@@ -385,7 +396,7 @@ PowerUp.create!(
   price: 42,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913932/dna-helix-inside-pill-capsules-standing-d-illustration-render-84873527_o7adje.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Smart Dust"
@@ -396,7 +407,7 @@ PowerUp.create!(
   price: 50,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914013/intricate-blue-pills-display-embedded-circuitry-shimmering-glitter-symbolizing-advanced-technology-wellness-modern-361226422_narl9f.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Neural Charge"
@@ -407,7 +418,7 @@ PowerUp.create!(
   price: 48,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914088/glowing-digital-capsule-medicine-tech-binary-code-digital-blue-glowing-pill-capsule-filled-binary-code-sits-dark-363905345_acl9wc.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 # Health (Physical Restoration & Enhancement)
@@ -421,7 +432,7 @@ PowerUp.create!(
   price: 30,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913936/dna-helix-inside-pill-capsules-standing-d-illustration-render-84868743_rbcktq.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Core Restore"
@@ -432,7 +443,7 @@ PowerUp.create!(
   price: 35,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914013/intricate-blue-pills-display-embedded-circuitry-shimmering-glitter-symbolizing-advanced-technology-wellness-modern-361226422_narl9f.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Immune Shot"
@@ -443,7 +454,7 @@ PowerUp.create!(
   price: 25,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914152/conceptual-image-transparent-capsule-filled-red-nanobots-conceptual-image-transparent-capsule-filled-red-310822854_tcfkih.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Reboot Pill"
@@ -454,7 +465,7 @@ PowerUp.create!(
   price: 40,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914187/capsule-intricate-neural-networks-glowing-nodes-symbolizing-neurology-pharmaceutical-innovation-310205276_qkfhbc.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Heal Drop"
@@ -465,7 +476,7 @@ PowerUp.create!(
   price: 28,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914234/drug-capsule-new-formula-d-illustration-drug-capsule-new-formula-139198466_hjxjce.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Energy Bloom"
@@ -476,7 +487,7 @@ PowerUp.create!(
   price: 32,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912594/abstract-dna-pill-concept-health-care-technology-graphic-realistic-transparent-futuristic-inside-112452968_pnphv9.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Wellness Pop"
@@ -487,7 +498,7 @@ PowerUp.create!(
   price: 20,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913060/image-features-blue-pill-text-success-representing-concept-achievement-accomplishment-surrounded-327976369_qlqofk.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Cleanse Capsule"
@@ -498,7 +509,7 @@ PowerUp.create!(
   price: 27,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913502/developing-future-pharmacology-artificial-intelligence-technology-abstract-futuristic-pills-generative-ai-319423792_g2jtqz.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Power Mint"
@@ -509,7 +520,7 @@ PowerUp.create!(
   price: 18,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747907000/clever-drugs-of-the-age-of-technology-with-brain-concept_jm28o6.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Revive Blend"
@@ -520,7 +531,7 @@ PowerUp.create!(
   price: 45,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747907017/red-medicine-pill-render-long-260nw-2449845389_oxqy0t.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Balance Dose"
@@ -531,7 +542,7 @@ PowerUp.create!(
   price: 38,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747841626/vrimijkr2qta5pc1c4rw.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "Fortify Boost"
@@ -542,7 +553,7 @@ PowerUp.create!(
   price: 42,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914094/glowing-blue-orange-capsule-liquid-symbolizing-pharmaceutical-innovation-biotechnology-advancements-medicine-core-close-up-324605728_ap1tnm.jpg",
   stock_quantity: 100,
-  user_id: User.first.id
+  user_id: user.id
 )
 
 puts "--------------------"

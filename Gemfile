@@ -76,3 +76,8 @@ end
 gem 'devise'
 gem 'faker'
 gem "cloudinary"
+
+
+group :development, :test do
+  gem 'database_cleaner-active_record'
+end

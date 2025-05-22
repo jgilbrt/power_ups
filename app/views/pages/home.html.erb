@@ -6,7 +6,12 @@
 
   <div class="position-absolute top-50 start-50 translate-middle text-center text-white" style="text-shadow: 4px 4px 9px rgba(0,0,0,0.8);">
     <h1 style="font-family: 'Arial Black', Gadget, sans-serif; font-weight: 900; font-size: 3rem;"> where powers meet heroes. </h1> <br>
-<button type="button" class="btn btn-secondary btn-lg btn-block">Sell Now</button>
+    <%= link_to new_power_up_path, class: "btn btn-secondary btn-lg btn-block" do %>
+      <span>
+        <i class="fa-solid fa-money-bill-wave"></i>
+        Sell now
+      </span>
+    <% end %>
   </div>
 </div>
 
