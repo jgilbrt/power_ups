@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
-  end
+  @orders = current_user.orders.includes(:power_up)
+end
+
 
   def show
     @order = Order.find(params[:id])
