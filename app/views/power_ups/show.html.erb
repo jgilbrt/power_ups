@@ -18,7 +18,9 @@
             <%= form_with url: orders_path, method: :post do %>
               <%= hidden_field_tag :power_up_id, @powerUp.id %>
               <%= hidden_field_tag :quantity, 1, min: 1 %>
-              <%= hidden_field_tag :user_id, current_user.id %>
+              <% if current_user %>
+                <%= hidden_field_tag :user_id, current_user.id %>
+              <% end %>
               <%= hidden_field_tag :total_price, @powerUp.price %>
               <%= submit_tag "Buy now", class: "btn btn-outline-secondary" %>
             <% end %>
