@@ -4,6 +4,8 @@ class PowerUpsController < ApplicationController
   def index
     @powerUps = PowerUp.all
 
+    @powerUps = @powerUps.includes(:reviews)
+
     @powerUps = PowerUp.left_outer_joins(:orders).where(orders: { accepted: [false, nil] }).distinct
 
     if params[:category].present? && params[:category] != "All"
@@ -26,6 +28,8 @@ class PowerUpsController < ApplicationController
 
   def show
     @powerUp = PowerUp.find(params[:id])
+    @reviews = @powerUp.reviews
+    @review = Review.new
   end
 
   def new
