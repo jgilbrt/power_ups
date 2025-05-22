@@ -6,7 +6,7 @@
       <%= f.input :product_name %>
       <%= f.input :price %>
       <%= f.input :description %>
-      <%= f.input :category %>
+      <%= f.input :category, collection: @categories, prompt: "Select category" %>
       <%= f.input :stock_quantity %>
       <%= f.input :image_url, label: "Upload image"%>
       <%= f.submit "Submit", class: "btn btn-outline-warning"%>
