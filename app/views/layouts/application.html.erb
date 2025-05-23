@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PowerUps</title>
+    <title>Power Ups - Elevate Your Life</title>
+     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
@@ -19,6 +23,11 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render "layouts/copyrightfooter", year: Time.current.year %>
+    <footer class="text-center">
+      <div class="container">
+        <p>&copy; <%= Time.current.year %> PowerUps. All rights reserved.</p>
+        <p><a href="#top" class="footer-back-to-top">Back to Top</a></p>
+      </div>
+
   </body>
 </html>
