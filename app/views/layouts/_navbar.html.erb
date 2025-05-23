@@ -1,34 +1,42 @@
-<nav class="navbar">
-  <ul class="d-flex justify-content-start no-bullet-points w-100">
-    <li class="ps-3">
-      <%= link_to root_path do %>
-        <%= image_tag "logo1.png", alt: "Logo", style: "height: 35px; padding-top: 5px" %>
-      <% end %>
-    </li>
-    <li class="ps-3 pt-1">
-      <%= form_with url: power_ups_path, method: :get, local: true, class: "search-bar d-flex align-items-center" do %>
-        <%= text_field_tag :query, params[:query], placeholder: "🔎 Search...", class: "form-control navbar-search me-2", style: "height: 35px; font-size: 14px; border-radius: 45px; margin-top: -2px" %>
-      <% end %>
-    </li>
-    <li class="pt-2 ps-3"><%= link_to "Shop", power_ups_path, class: "text-style" %></li>
+<nav class="navbar px-3 py-2">
+  <div class="d-flex justify-content-between align-items-center w-100">
 
+    <!-- Left side: Logo + Search + Links -->
+    <div class="d-flex align-items-center gap-3">
+      <!-- Logo -->
+      <%= link_to root_path do %>
+        <%= image_tag "logo1.png", alt: "Logo", style: "height: 35px;" %>
+      <% end %>
+
+      <!-- Search -->
+      <%= form_with url: power_ups_path, method: :get, local: true, class: "d-flex align-items-center" do %>
+        <%= text_field_tag :query, params[:query], placeholder: "🔎 Search...", class: "form-control", style: "height: 35px; font-size: 14px; border-radius: 45px;" %>
+      <% end %>
+
+      <!-- Shop -->
+      <%= link_to "Shop", power_ups_path, class: "text-style pt-1" %>
+
+      <!-- Sell (only if signed in) -->
+      <% if user_signed_in? %>
+        <%= link_to "Sell", new_power_up_path, class: "text-style pt-1" %>
+      <% end %>
+    </div>
+
+    <!-- Right side: Account dropdown or Log In -->
     <% if user_signed_in? %>
-      <li class="pt-2 ps-3"><%= link_to "Sell", new_power_up_path, class: "text-style" %></li>
-      <li class="pt-2 pe-3 text-align dropdown w-100" style="position: relative;">
-      </ul>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" style="background:none;border:none;cursor:pointer;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Account
+          Account
         </button>
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" style="background: #000; color: white; box-shadow: 0 0px 15px rgba(0, 0, 0, 0.4);">
           <li class="pt-2 text-start"><%= link_to "My Orders", orders_path, class: "dropdown-item text-style" %></li>
-          <li class="pt-2 text-start"><%= link_to "My Listings", listings_path, class: " dropdown-item text-style" %></li>
-          <li class="pt-2 text-start text-style"><%= link_to "Log Out", destroy_user_session_path,  class: " dropdown-item text-style", data: { turbo_method: :delete } %></li>
+          <li class="pt-2 text-start"><%= link_to "My Listings", listings_path, class: "dropdown-item text-style" %></li>
+          <li class="pt-2 text-start"><%= link_to "Log Out", destroy_user_session_path, class: "dropdown-item text-style", data: { turbo_method: :delete } %></li>
         </ul>
       </div>
     <% else %>
-      <div class="pe-3 pt-2 p-1 w-100 text-align">
-        <li><%= link_to "Log In", new_user_session_path, class:"text-style" %></li>
-      </div>
+      <%= link_to "Log In", new_user_session_path, class: "text-style" %>
     <% end %>
+
+  </div>
 </nav>
