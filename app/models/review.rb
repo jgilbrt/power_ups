@@ -1,5 +1,4 @@
 class Review < ApplicationRecord
-  belongs_to :order
   belongs_to :power_up
 
   validates :comment, presence: true
