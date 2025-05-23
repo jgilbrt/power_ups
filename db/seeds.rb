@@ -410,6 +410,17 @@ PowerUp.create!(
   user_id: user.id
 )
 
+puts "Javascript Mastery"
+PowerUp.create!(
+  product_name: "Javascript Mastery",
+  description: "Temporarily increases your JavaScript knowledge and coding skills by 600% (be careful Elon).",
+  category: "Mind",
+  price: 99,
+  image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:ho[…]1747998436/ChatGPT_Image_May_23_2025_12_56_23_PM_svoiyz.png",
+  stock_quantity: 100,
+  user_id: user.id
+)
+
 puts "Neural Charge"
 PowerUp.create!(
   product_name: "Neural Charge",
