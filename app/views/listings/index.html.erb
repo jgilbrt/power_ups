@@ -1,5 +1,5 @@
-<div class="container">
-  <h1 class="text-primary text-center">My listings</h1>
+<div class="container pt-4">
+  <h1 class="text-dark text-style-bold text-center">My listings</h1>
 
   <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
     <% @powerUps.each do |pill| %>
@@ -40,11 +40,4 @@
       </div>
     <% end %>
   </div>
-</div>
-<div class="text-center mt-5">
-  <%= link_to root_path, class: "btn btn-outline-success" do %>
-    <span>
-      <i class="fa-solid fa-backward"></i> to home
-    </span>
-  <% end %>
 </div>
