@@ -78,4 +78,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  url: <%= ENV["DATABASE_URL"] %>
+  <<: *default
+  database: power_ups_production
+  username: power_ups
+  password: <%= ENV["POWER_UPS_DATABASE_PASSWORD"] %>
