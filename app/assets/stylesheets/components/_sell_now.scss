@@ -1,0 +1,17 @@
+.sell-now {
+  display: inline-block;
+  background-color: black;
+  box-shadow: #fff 0px 0px 15px;
+  color: #fff !important;
+  padding: 10px 24px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+.sell-now:hover {
+  background-color: #e65100;
+  box-shadow: #fff 0px 0px 15px;
+  color: #fff;
+}
