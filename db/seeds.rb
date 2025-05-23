@@ -315,7 +315,7 @@ puts "Mind Boost"
 PowerUp.create!(
   product_name: "Mind Boost",
   description: "Temporarily increases IQ by 20 points.",
-  ccategory: "Mind",
+  category: "Mind",
   price: 40,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913729/illustration-blue-pill-circuitry-glitter-surrounded-glowing-particles-minimalistic-setting-capsule-featuring-365552983_ywikmi.jpg",
   stock_quantity: 100,
