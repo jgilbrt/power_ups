@@ -1,0 +1,46 @@
+<div class="col">
+  <%= link_to power_up_path(pill), class: "text-decoration-none text-dark" do %>
+    <div class="card h-100 rounded-4 shadow">
+
+      <div class="ratio ratio-1x1 rounded-top-4 overflow-hidden">
+        <%= image_tag pill.image_url, alt: "image", class: "w-100 h-100 object-fit-cover" %>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title"><strong><%= pill.product_name %></strong></h5>
+        <p class="card-text" style="margin-top: -5px">£<%= pill.price %></p>
+        <div style="margin-top: -10px">
+          <% if pill.category.present? %>
+            <% badge_class =
+              case pill.category
+              when "Mood" then "bg-warning"
+              when "Health" then "bg-success"
+              when "Brain" then "bg-danger"
+              when "Boost" then "bg-primary"
+              else "bg-secondary"
+              end
+            %>
+            <span class="badge <%= badge_class %> rounded-pill"><%= pill.category %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="card-footer bg-white border-top-0 rounded-bottom-4">
+        <% if pill.order.present? && pill.order.accepted? %>
+          <small>
+            <%= image_tag "https://cdn-icons-png.flaticon.com/512/2143/2143150.png", alt: "tick icon", style: "width:16px; height:16px;" %>
+            <span class="text-success fw-bold">Sold</span> to
+            <strong><%= pill.order.user.username %></strong>
+            <%= time_ago_in_words(pill.order.updated_at || pill.order.order_date) %> ago
+          </small>
+        <% else %>
+          <small class="text-body-secondary" style="font-size: 13px;">
+            Listed by <strong><%= pill.user.username %></strong>
+            <%= time_ago_in_words(pill.created_at) %> ago
+          </small>
+        <% end %>
+      </div>
+
+    </div>
+  <% end %>
+</div>
