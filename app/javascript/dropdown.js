@@ -11,3 +11,5 @@ document.addEventListener("turbo:load", function() {
     });
   }
 });
+
+console.log("Dropdown.js loaded")
