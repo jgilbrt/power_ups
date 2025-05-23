@@ -23,7 +23,7 @@ puts "Speed Boost"
 PowerUp.create!(
   product_name: "Speed Boost",
   description: "Temporarily increases running speed by 300% for 30 seconds.",
-  category: "Boost",
+  category: "Energy",
   price: 25,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747906970/illustration-blue-pill-circuitry-glitter-surrounded-glowing-particles-minimalistic-setting-capsule-featuring-365552983_exavic.jpg",
   stock_quantity: 100,
@@ -34,7 +34,7 @@ puts "Agility Burst"
 PowerUp.create!(
   product_name: "Agility Burst",
   description: "Enhances reflexes and nimbleness, allowing for parkour-like movements.",
-  category: "Boost",
+  category: "Energy",
   price: 30,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747906982/360_F_1465371207_sfLR1tNHTZyScuoFMm4WLMzyFWHp4Ajj_duuqzl.jpg",
   stock_quantity: 100,
@@ -45,7 +45,7 @@ puts "Dash Shot"
 PowerUp.create!(
   product_name: "Dash Shot",
   description: "Grants a sudden burst of forward momentum, perfect for dodging or closing gaps.",
-  category: "Boost",
+  category: "Energy",
   price: 28,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747907017/red-medicine-pill-render-long-260nw-2449845389_oxqy0t.jpg",
   stock_quantity: 100,
@@ -56,7 +56,7 @@ puts "Turbo Charge"
 PowerUp.create!(
   product_name: "Turbo Charge",
   description: "Doubles movement speed and reaction time for a short duration.",
-  category: "Boost",
+  category: "Energy",
   price: 35,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912527/smart-pill-circuit-board-revolutionizing-future-healthcare-ai-powered-medicine-advanced-treatment-integration-artificial-smart-367156340_cdpjbu.jpg",
   stock_quantity: 100,
@@ -67,7 +67,7 @@ puts "Kinetic Surge"
 PowerUp.create!(
   product_name: "Kinetic Surge",
   description: "Converts stored energy into explosive bursts of speed.",
-  category: "Boost",
+  category: "Energy",
   price: 32,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747906518/360_F_1169775400_fKjcXdD7mrcz2oEQN5tI1h39fr6I9Q3O_s4wzfn.jpg",
   stock_quantity: 100,
@@ -78,7 +78,7 @@ puts "Momentum Drive"
 PowerUp.create!(
   product_name: "Momentum Drive",
   description: "Maintains acceleration without fatigue, great for long sprints.",
-  category: "Boost",
+  category: "Energy",
   price: 27,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912594/abstract-dna-pill-concept-health-care-technology-graphic-realistic-transparent-futuristic-inside-112452968_pnphv9.jpg",
   stock_quantity: 100,
@@ -89,7 +89,7 @@ puts "Sprint Rush"
 PowerUp.create!(
   product_name: "Sprint Rush",
   description: "Enables ultra-fast sprints without muscle strain.",
-  category: "Boost",
+  category: "Energy",
   price: 29,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912608/dna-capsule-11733864_xutlkw.jpg",
   stock_quantity: 100,
@@ -100,7 +100,7 @@ puts "Quickstep Pill"
 PowerUp.create!(
   product_name: "Quickstep Pill",
   description: "Makes footsteps nearly silent while increasing walking speed.",
-  category: "Boost",
+  category: "Energy",
   price: 22,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747912990/transparent-capsule-gray-background-gradient-39152418_eimdu8.jpg",
   stock_quantity: 100,
@@ -111,7 +111,7 @@ puts "Overdrive Core"
 PowerUp.create!(
   product_name: "Overdrive Core",
   description: "Pushes physical limits to extreme speeds for 10 seconds (with a cooldown).",
-  category: "Boost",
+  category: "Energy",
   price: 40,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913019/glowing-ai-enhanced-pill-concept-set-vibrant-futuristic-digital-environment-futuristic-ai-enhanced-pill-concept-337666160_btn90u.jpg",
   stock_quantity: 100,
@@ -122,7 +122,7 @@ puts "Rapid Fire"
 PowerUp.create!(
   product_name: "Rapid Fire",
   description: "Speeds up limb movements, useful for combat or rapid tasks.",
-  category: "Boost",
+  category: "Energy",
   price: 31,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913039/glowing-ai-enhanced-pill-concept-set-vibrant-futuristic-digital-environment-futuristic-ai-enhanced-pill-concept-336364997_vudc1w.jpg",
   stock_quantity: 100,
@@ -133,7 +133,7 @@ puts "Hyper Sprint"
 PowerUp.create!(
   product_name: "Hyper Sprint",
   description: "Allows short-distance teleportation in rapid succession.",
-  category: "Boost",
+  category: "Energy",
   price: 45,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913060/image-features-blue-pill-text-success-representing-concept-achievement-accomplishment-surrounded-327976369_qlqofk.jpg",
   stock_quantity: 100,
@@ -144,7 +144,7 @@ puts "Blink Capsule"
 PowerUp.create!(
   product_name: "Blink Capsule",
   description: "Instant short-range teleportation (up to 20 feet).",
-  category: "Boost",
+  category: "Energy",
   price: 42,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913084/cuttingedge-digital-healthcare-innovation-concept-utilizing-futuristic-technology-artificial-intelligence-precision-320066276_axh5d8.jpg",
   stock_quantity: 100,
@@ -293,7 +293,7 @@ puts "Focus Spark"
 PowerUp.create!(
   product_name: "Focus Spark",
   description: "Sharpens concentration to laser-like precision.",
-  category: "Brain",
+  category: "Mind",
   price: 35,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913699/innovative-smart-pills-transforming-healthcare-futuristic-technology-smart-pills-integrated-circuits-promise-364439744_cqkpz1.jpg",
   stock_quantity: 100,
@@ -304,7 +304,7 @@ puts "Clarity Capsule"
 PowerUp.create!(
   product_name: "Clarity Capsule",
   description: "Removes brain fog and enhances awareness.",
-  category: "Brain",
+  category: "Mind",
   price: 30,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913747/futuristic-capsule-against-various-viruses-diseases-background-bacteria-concept-medicine-care-seriously-ill-323657222_eprqsk.jpg",
   stock_quantity: 100,
@@ -315,7 +315,7 @@ puts "Mind Boost"
 PowerUp.create!(
   product_name: "Mind Boost",
   description: "Temporarily increases IQ by 20 points.",
-  category: "Brain",
+  ccategory: "Mind",
   price: 40,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913729/illustration-blue-pill-circuitry-glitter-surrounded-glowing-particles-minimalistic-setting-capsule-featuring-365552983_ywikmi.jpg",
   stock_quantity: 100,
@@ -326,7 +326,7 @@ puts "Sharp Shot"
 PowerUp.create!(
   product_name: "Sharp Shot",
   description: "Enhances problem-solving speed.",
-  category: "Brain",
+  category: "Mind",
   price: 32,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913715/innovative-smart-pills-transforming-healthcare-futuristic-technology-smart-pills-integrated-circuits-promise-364439787_jt7fas.jpg",
   stock_quantity: 100,
@@ -337,7 +337,7 @@ puts "Think Pill"
 PowerUp.create!(
   product_name: "Think Pill",
   description: "Accelerates thought processing for rapid decision-making.",
-  category: "Brain",
+  category: "Mind",
   price: 38,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913843/transparent-capsule-blue-background-38459952_hlsznb.jpg",
   stock_quantity: 100,
@@ -348,7 +348,7 @@ puts "Insight Drop"
 PowerUp.create!(
   product_name: "Insight Drop",
   description: "Grants sudden epiphanies or creative breakthroughs.",
-  category: "Brain",
+  category: "Mind",
   price: 45,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913595/d-render-abstract-art-d-composition-surreal-flying-opened-cylinder-capsule-pill-small-balls-inside-black-metal-328884570_rjmujq.jpg",
   stock_quantity: 100,
@@ -359,7 +359,7 @@ puts "Memory Flash"
 PowerUp.create!(
   product_name: "Memory Flash",
   description: "Perfectly recalls a forgotten memory.",
-  category: "Brain",
+  category: "Mind",
   price: 28,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913866/transparent-capsule-blue-background-38503703_bk5anh.jpg",
   stock_quantity: 100,
@@ -370,7 +370,7 @@ puts "Logic Flow"
 PowerUp.create!(
   product_name: "Logic Flow",
   description: "Enhances structured, analytical thinking.",
-  category: "Brain",
+  category: "Mind",
   price: 33,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913878/green-gears-pill-vector-symbolic-abstract-illustration-futuristic-smart-88831424_gvoyzp.jpg",
   stock_quantity: 100,
@@ -381,7 +381,7 @@ puts "Brainwave Pop"
 PowerUp.create!(
   product_name: "Brainwave Pop",
   description: "Syncs brainwaves for optimal creativity.",
-  category: "Brain",
+  category: "Mind",
   price: 36,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913923/dna-helix-inside-pill-capsules-standing-d-illustration-render-84873861_lmgpfy.jpg",
   stock_quantity: 100,
@@ -392,7 +392,7 @@ puts "Idea Surge"
 PowerUp.create!(
   product_name: "Idea Surge",
   description: "Triggers a flood of innovative ideas.",
-  category: "Brain",
+  category: "Mind",
   price: 42,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747913932/dna-helix-inside-pill-capsules-standing-d-illustration-render-84873527_o7adje.jpg",
   stock_quantity: 100,
@@ -403,9 +403,20 @@ puts "Smart Dust"
 PowerUp.create!(
   product_name: "Smart Dust",
   description: "Temporarily grants expertise in a random skill.",
-  category: "Brain",
+  category: "Mind",
   price: 50,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914013/intricate-blue-pills-display-embedded-circuitry-shimmering-glitter-symbolizing-advanced-technology-wellness-modern-361226422_narl9f.jpg",
+  stock_quantity: 100,
+  user_id: user.id
+)
+
+puts "Javascript Mastery"
+PowerUp.create!(
+  product_name: "Javascript Mastery",
+  description: "Temporarily increases your JavaScript knowledge and coding skills by 600% (be careful Elon).",
+  category: "Mind",
+  price: 99,
+  image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:ho[…]1747998436/ChatGPT_Image_May_23_2025_12_56_23_PM_svoiyz.png",
   stock_quantity: 100,
   user_id: user.id
 )
@@ -414,7 +425,7 @@ puts "Neural Charge"
 PowerUp.create!(
   product_name: "Neural Charge",
   description: "Supercharges learning speed for one hour.",
-  category: "Brain",
+  category: "Mind",
   price: 48,
   image_url: "https://res.cloudinary.com/do2s320cj/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1747914088/glowing-digital-capsule-medicine-tech-binary-code-digital-blue-glowing-pill-capsule-filled-binary-code-sits-dark-363905345_acl9wc.jpg",
   stock_quantity: 100,
