@@ -22,5 +22,4 @@ Rails.application.routes.draw do
 
   get '/signup', to: redirect('/users/sign_up')
   get '/login', to: redirect('/users/sign_in')
-
 end
