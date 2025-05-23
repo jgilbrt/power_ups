@@ -10,3 +10,73 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  font-family: Arial, sans-serif;
+}
+header {
+  background-size: cover;
+  color: #160202;
+  text-shadow: 1px 1px 2px #000;
+  padding: 0px 0px;
+}
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.section p {
+  font-size: 1.2rem;
+  color: #f2f6f3;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-back-to-top {
+  display: inline-block;
+  background-color: #ff9800;
+  color: #fff !important;
+  padding: 8px 24px;
+  border-radius: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+.footer-back-to-top:hover {
+  background-color: #e65100;
+  color: #fff;
+}
+
+.section {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+  min-height: 220px;
+  overflow: hidden;
+}
+
+.section > h2,
+.section > p {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 2px 2px 10px #000;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  border-radius: 12px;
+  z-index: 0;
+}
