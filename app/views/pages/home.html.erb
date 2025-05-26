@@ -2,24 +2,23 @@
 </head>
 <div class="position-relative mb-5" style="max-height: 500px; overflow: hidden;">
   <%= image_tag "https://media3.giphy.com/media/l44QzsOLXxcrigdgI/200w.gif?cid=6c09b952y2jeeyu3oekyvxdlpgq3pwt1azi2zeufjsedz258&ep=v1_gifs_search&rid=200w.gif&ct=g",
-      alt: "Hero Image",
-      class: "img-fluid w-100",
-      style: "max-height: 500px; object-fit: cover;" %>
-
-  <div class="position-absolute top-50 start-50 translate-middle text-center text-white";">
-    <h1 style="font-family: 'Arial Black', Gadget, sans-serif; font-weight: 900; font-size: 3rem;"> PowerUp</h1>
-    <h2 style="font-family: 'Arial Black', Gadget, sans-serif; font-weight: 450; font-size: 2rem;"> Where powers meet heroes</h2> <br>
+    alt: "Hero Image",
+    class: "img-fluid w-100",
+    style: "max-height: 500px; object-fit: cover;" %>
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+    <h1 style="font-family: 'Arial Black', Gadget, sans-serif; font-weight: 900; font-size: 3rem;">PowerUp</h1>
+    <h2 style="font-family: 'Arial Black', Gadget, sans-serif; font-weight: 450; font-size: 2rem;">Where powers meet heroes</h2>
+    <br>
     <%= link_to new_power_up_path, class: "sell-now btn-lg btn-blockbtn btn-lg w-50 rounded-pill", style: "font-weight: 550; font-size: 17px;" do %>
       <span>
-        <i class="fa-solid""></i>
+        <i class="fa-solid"></i>
         PowerUp your income
       </span>
-     <% end %>
-   </div>
+    <% end %>
+  </div>
 </div>
 
 <h1 class="text-secondary mt-5 mb-4 text-center">Featured</h1>
-
 <div class="container mb-5">
   <div class="row row-cols-1 row-cols-md-3 g-5 justify-content-center">
     <% @random_powerups.each do |pill| %>
@@ -29,60 +28,63 @@
 </div>
 
 <h1 class="text-secondary mt-5 mb-4 text-center">Shop by Category</h1>
-
 <main class="container mb-5">
   <div class="row text-center g-4">
-
     <div class="col-md-4">
-      <div class="rounded-4 shadow d-flex align-items-center justify-content-center text-center" style="
+      <%= link_to power_ups_path(category: "Energy"), class: "text-decoration-none" do %>
+        <div class="rounded-4 shadow d-flex align-items-center justify-content-center text-center" style="
           background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                      url('https://media.istockphoto.com/id/1385690044/photo/two-fit-young-people-jogging-together-along-a-scenic-road.jpg?s=612x612&w=0&k=20&c=ihld9zdDXw-rl_5Aoh8ppqYY4mFl4o7w0i7s2OzHAJ4=')
-                      center/cover no-repeat;
+          url('https://media.istockphoto.com/id/1385690044/photo/two-fit-young-people-jogging-together-along-a-scenic-road.jpg?s=612x612&w=0&k=20&c=ihld9zdDXw-rl_5Aoh8ppqYY4mFl4o7w0i7s2OzHAJ4=')
+          center/cover no-repeat;
           min-height: 320px;
           color: white;
           padding: 1.5rem;
           text-shadow: 1px 1px 8px #000;
         ">
-        <div>
-          <h2>Energy</h2>
-          <p>Experience a surge of vitality with our scientifically crafted energy enhancers designed to fuel your day.</p>
+          <div>
+            <h2>Energy</h2>
+            <p>Experience a surge of vitality with our scientifically crafted energy enhancers designed to fuel your day.</p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
 
     <div class="col-md-4">
-      <div class="rounded-4 shadow d-flex align-items-center justify-content-center text-center" style="
+      <%= link_to power_ups_path(category: "Mood"), class: "text-decoration-none" do %>
+        <div class="rounded-4 shadow d-flex align-items-center justify-content-center text-center" style="
           background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                      url('https://media.istockphoto.com/id/2182151620/photo/friends-enjoying-a-morning-run-in-a-sunlit-park.jpg?s=612x612&w=0&k=20&c=8OM9ZTs0vQCa9Uy-fHjawbxVWHcMvUYKB0lE6llauN0=')
-                      center/cover no-repeat;
+          url('https://media.istockphoto.com/id/2182151620/photo/friends-enjoying-a-morning-run-in-a-sunlit-park.jpg?s=612x612&w=0&k=20&c=8OM9ZTs0vQCa9Uy-fHjawbxVWHcMvUYKB0lE6llauN0=')
+          center/cover no-repeat;
           min-height: 320px;
           color: white;
           padding: 1.5rem;
           text-shadow: 1px 1px 8px #000;
         ">
-        <div>
-          <h2>Mood</h2>
-          <p>Enhance your daily outlook. Our unique formulations gently balance your emotions for a consistently positive state of mind.</p>
+          <div>
+            <h2>Mood</h2>
+            <p>Enhance your daily outlook. Our unique formulations gently balance your emotions for a consistently positive state of mind.</p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
 
     <div class="col-md-4">
-      <div class="rounded-4 shadow d-flex align-items-center justify-content-center text-center" style="
+      <%= link_to power_ups_path(category: "Mind"), class: "text-decoration-none" do %>
+        <div class="rounded-4 shadow d-flex align-items-center justify-content-center text-center" style="
           background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                      url('https://media.istockphoto.com/id/1267497795/photo/young-woman-in-spiritual-pose-holding-the-light.jpg?s=612x612&w=0&k=20&c=7HiquJMEZQV22fvhm0PIm61GIzdjcGNEUGDmQ9W0ekY=')
-                      center/cover no-repeat;
+          url('https://media.istockphoto.com/id/1267497795/photo/young-woman-in-spiritual-pose-holding-the-light.jpg?s=612x612&w=0&k=20&c=7HiquJMEZQV22fvhm0PIm61GIzdjcGNEUGDmQ9W0ekY=')
+          center/cover no-repeat;
           min-height: 320px;
           color: white;
           padding: 1.5rem;
           text-shadow: 1px 1px 8px #000;
         ">
-        <div>
-          <h2>Mind</h2>
-          <p>Sharpen your focus and clarity. Our natural ingredients support cognitive function, helping you think clearly and creatively.</p>
+          <div>
+            <h2>Mind</h2>
+            <p>Sharpen your focus and clarity. Our natural ingredients support cognitive function, helping you think clearly and creatively.</p>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
-
   </div>
 </main>
